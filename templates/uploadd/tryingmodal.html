@@ -1,0 +1,171 @@
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(131, 129, 129, 0.608);
+    }
+    .modal{
+        display: flex;
+        height:100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .modal-head{
+        margin: 10px;
+        height: 30px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    background: grey;
+    font-size: 25px;
+    }
+.modal-body {
+    width: 95%;
+    height: 95%;
+    position: relative;
+    margin: 30px;
+  }
+  .modal-footer{
+        width: 85%;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+        align-items: center;
+        
+    }
+  
+  #frontcard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background: #0057e3;
+  }
+  
+  .overlay {
+    z-index: 9;
+    margin: 10px;
+    background: #009938;
+    opacity: 0.9;
+  }
+  .overlay:active{
+    opacity:1;
+  }
+  .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 200px;
+        flex-direction: column;
+        position: absolute;
+        background: orange;
+        height: 400px;
+        width: 400px;
+        
+    }
+    .quitbutton {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,.1);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transform-origin: top center;
+    animation: animate 3s linear infinite;
+    animation-play-state: paused;
+    text-align: center;
+    font-size: 40px;
+    right: 50px;
+    top: 50px;
+    outline: 1px ridge rgb(84, 83, 83);
+    cursor: pointer;
+    background: red;
+}
+</style>
+
+
+<div class="center">
+<div class="modal">
+
+<div class="modal-head">
+    head
+</div>
+
+<div class="modal-body">
+    <div  id="frontcard"> blue </div>
+    <div  class="frontcard overlay" id="backcard" > ggreen </div>
+</div>    
+
+<div class="modal-footer">
+    <a href="/card_question?before={{questioncard.id}}">
+        <button>
+            prev 
+        </button>
+    </a>
+    
+    <a href="">
+    <button onclick="changOpacity">
+        backside
+        <!-- mit opacity null einen bereits gerenderten backside darstellen css -->
+    </button>
+    </a>
+    <a href="/card_question?after={{questioncard.id}}">
+        <button>
+            next 
+        </button>
+    </a>
+</div>
+</div>
+
+</div>
+<div>
+    <a href="cards" >
+        <button class="quitbutton">
+            x
+        </button>
+    </a>
+</div>
+<script>
+    function changOpacity(){
+        document.getElementById("frontcard").style.opacity="0.2";
+    }
+</script>
+
+
+<!-- <button onclick="myFunction()">Try it</button> -->
+
+<!-- <script>
+    function myFunction() {
+      document.getElementById("myDIV").style.opacity = "0.5";
+    }
+</script> -->
+
+
+<!-- <div class="colors">
+    <span class="active" style="--clr:rgb(29, 209, 68);" onclick="changColor('rgb(29, 209, 68')"></span>
+    <span style="--clr:rgb(255, 235, 107);" onclick="changColor('rgb(255, 235, 107)')" ></span>
+    <span style="--clr:rgb(46, 78, 222);" onclick="changColor('rgb(46, 78, 222)')"></span>
+    <span style="--clr:rgb(243, 104, 48);" onclick="changColor('rgb(243, 104, 48)')"></span>
+    <span style="--clr:rgb(233, 67, 255);" onclick="changColor('rgb(233, 67, 255)')"></span>
+
+</div> -->
+<!-- <script>
+    function changColor(color){
+        document.body.style.background = color;
+
+        //for active
+        document.querySelectorAll('span').forEach(function(item){
+            item.classList.remove('active');
+        })
+        event.target.classList.add('active');
+    }
+</script> -->

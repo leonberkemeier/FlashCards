@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Leon</title> -->
+</head>
+<body>
+    {% extends 'uploadd/index.html'%}
+    {% block content%}
+    <style>
+        .container{
+            margin-left: 15px;
+            margin-right: 65px;
+            display: flex;
+            /* width: 95%; */
+            flex-wrap: wrap;
+        }
+        .postlogin{
+            width: 100%;
+            display: flex;
+            text-align: left;
+            /* margin-left: 20px; */
+            justify-content: space-evenly;
+            /* flex: wrap; */
+            flex-wrap: wrap;
+        }
+        .refenrence{
+            
+            margin:10px;
+            /* margin-left: 40px;
+            margin-right: 30px; */
+            background: rgba(6, 244, 6, 0.5);
+            font-size: 20px;
+            border-radius: 5px;
+            width: 240px;
+            height: 240px;
+            gap: 80px;
+            color: white;   
+            text-decoration: none;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            cursor: pointer;
+            justify-content: center;
+            text-align: center;
+            
+        }
+        
+        .btn_header{
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn_body{
+            font-size: 64px;
+            margin-top: 10px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            
+        }
+        .refenrence:hover{
+            filter: drop-shadow(0 0 0 rgba(7, 245, 7));
+            font-size: 50px;
+        }
+        .ionicon{
+            font-size: 64px;
+        }
+        @media (max-width:600px){
+            .refenrence{
+                height: 180px;
+                width: 180px;
+                font-size: 60px;
+            }
+            .ionicon{
+                font-size: 64px;
+            }
+            .btn_header{
+                font-size: 20px;
+            }
+        }
+                 
+        
+        
+        </style>
+    <div class="container">
+    <div class="postlogin">
+        <a class="refenrence" href="/myprojects">
+            <div class="btn_header">MyProjects</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="folder-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        <a class="refenrence" href='http://list.leonberkemeier.de'>
+            <div class="btn_header">Einkaufsliste</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="list-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        
+
+        <a class="refenrence" href='http://leonberkemeier.de'>
+            <div class="btn_header">Leon Berkemeier</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="person-outline"></ion-icon></div>
+            
+        </a>
+        
+        <br>
+        <a class="refenrence" href='/card'>
+            <div class="btn_header">Full Card List</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="document-text-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        <a class="refenrence" href='/upload'>
+            <div class="btn_header">Upload Cards</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="cloud-upload-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        <a class="refenrence" href='/index'>
+            <div class="btn_header">Index</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="book-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        <a class="refenrence" href='/camera'>
+            <div class="btn_header">Camera</div>
+           
+            <div class="btn_body"><ion-icon class="ionicon" name="camera-outline"></ion-icon></div>
+            
+        </a>
+        <br>
+        
+       
+        
+        
+        <!-- <button class="refenrence" type="submit"><a class="refenrence" href="/trial">- trial</a></button>
+        <br> -->
+        
+        
+        </div>
+</div>
+    {% endblock%}
+</body>
+</html>

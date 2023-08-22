@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 20px;
+        }
+        .diver{
+            height: 80px;
+            width: 80px;
+            background: green;
+            border-radius: 5px;
+        }
+        .printer{
+            font-size: 20px;
+        }
+
+        @media (max-width:700px){
+            .diver{
+                height:200px;
+                width: 200px;
+            }
+            .printer{
+                font-size: 60px;
+            }
+    }
+    </style>
+    <div class="container">
+        <div class="diver">
+            <h1 class="printer">Big Print</h1>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Webcam Stream</title>
+    <style>
+        h1{
+            font-family: sans-serif;
+            color: #333;
+
+        }
+        body{
+            margin:50px;
+
+        }
+        #container{
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 10px #333 solid;
+        }
+        #videoelement{
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Display webcam stream</h1>
+    <div id="container">
+        <video autoplay="true" id="videoelement">
+
+        </video>
+    </div>
+
+    <script>
+        let video = document.querySelector("#videoelement");
+
+        if (navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video: true})
+                .then(function(stream){
+                    video.srcObject = stream;
+                })
+                .catch(function(error){
+                    console.log("something went wrong!")
+                })
+        }
+        else{
+            console.log("getUserMedia Not Supported!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {% for questioncard in cards %}
+    {{ questioncard.id }}
+    {{ questioncard.front }}
+    {{ questioncard.title }}
+
+    {{row.name}}
+    {{row.id}}
+
+    {% endfor %} -->
+    <!-- {{card.id}} -->
+
+    <!-- {{questioncard.id}}
+    {{questioncard.title}} -->
+    
+    <table >
+        <thead>
+            <tr class="columns">
+                <th class="column">
+                    Title
+                </th >
+                
+                <th class="column" >
+                    id
+                </th>
+                <th class="column">
+                    front
+                </th>
+                <th class="column">
+                    side
+                </th>
+                <th class="column">
+                    Delete
+                </th>
+                
+            </tr>
+        </thead>  
+        <style>
+            .picsize {
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+        {{ row.id }}
+        <br>
+        {{ row.name }}
+        <br>
+        
+        <tbody>
+            {% for questioncard in cards %}
+                <tr>
+                    <td>
+                        {{ questioncard.title }}
+                    </td>
+                    <td>
+                        {{ questioncard.id }}
+                    </td>
+                    <td>
+                        {{ questioncard.front }}
+                    </td>
+                    <!-- <td>
+                        {{ row.name }}
+                    </td>
+                    <td>
+                        {{ row.id }}
+                    </td> -->
+                    <td>
+                        {{ questioncard.side}}
+                    </td>
+                
+                    <td>
+                        <form method="post" action="{% url 'delete_card' questioncard.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button" >delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </tbody>  
+
+    </table>
+    
+    if ({{questioncard.side}}  ==  {{row.id}}) {
+        {{ questioncard.title }}();
+    }
+    <br>
+    {% for questioncard in projectcards %}
+    <h1>title</h1>
+    {{questioncard.title}}
+    <br>
+    <h1>id</h1>
+    {{questioncard.id}}
+    <br>
+    <h1>side</h1>
+    {{questioncard.side}}
+
+    {% endfor %}
+    
+</body>
+</html>

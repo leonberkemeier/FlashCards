@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Button on Keypress</title>
+    <style>
+        #frontbtn{
+            background: green;
+            height: 60px;
+            width: 60px;
+        }
+        #backbtn{
+            background: blue;
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Press 'Enter' key to click the button</h1>
+    <button id="frontbtn" onclick="changeOpacity()">Click Me</button>
+    <button id="backbtn" onclick="changeBack()">Click Me</button>
+
+
+    <script>
+        // Function to handle the key press event
+        
+
+        document.addEventListener("keydown", e =>{
+            if (e.key.toLowerCase() === "j"){
+                document.getElementById('backbtn').click();
+            }
+        });
+        document.addEventListener("keydown", e =>{
+            if (e.key.toLowerCase() === "l"){
+                document.getElementById('frontbtn').click();
+            }
+        });
+
+
+        // function handleKeyPress(event2){
+        //     if (event2.keyCode === 13) {
+        //         // Simulate clicking the button with the id 'myButton'
+        //         document.getElementById('backbtn').click();
+        //     }
+            
+        // }
+        
+
+        // Attach the event listener to the document
+        
+        
+        
+        function changeOpacity() {
+          document.getElementById("frontbtn").style.background = "green";
+          document.getElementById("backbtn").style.background = "blue";
+        }
+        function changeBack() {    
+          document.getElementById("frontbtn").style.background = "blue";
+          document.getElementById("backbtn").style.background = "green";
+        }
+        
+        document.addEventListener("keydown", e =>{
+            console.log(e);
+        });
+        // document.addEventListener("keydown", e =>{
+        //     if (e.key.toLowerCase() === "u"){
+        //         alert('welcome')
+        //     }
+        // });
+   </script>
+</body>
+</html>

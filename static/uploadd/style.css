@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+:root{
+    --clr:#3b3f50;
+
+}
+body{
+    
+    
+    min-height: 100vh;
+    background: grey;
+    
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding:10px;
+    background:#d88cee;
+    position: sticky;
+    
+}
+.navigation
+{
+    width: 320px;
+    height: 100px;
+    background: #d88ceeda;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: sticky;
+
+}
+.navigation ul{
+    display: flex;
+    width: 280px;
+
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    text-align: center;
+    font-weight: 500;
+
+
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+.navigation ul li:hover a .icon
+{
+    transform: translateY(-10px);
+    font-size: 2.5em;
+    transition: 0.5s;
+    
+}
+.navigation ul li a .text
+{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(0px);
+
+}
+.navigation ul li a:hover .text
+{
+    opacity: 1;
+    font-size: 1.2em;
+    transform: translateY(20px);
+
+}
+.logout
+{
+    width: 80px;
+    height: 100px;
+    background: rgba(242, 61, 124);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+.logout ul{
+    display: flex;
+    width: 100px;
+
+}
+.logout ul li{
+    position: relative;
+    list-style: none;
+    width: 100px;
+    height: 70px;
+    z-index: 1;
+}
+.logout ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    text-align: center;
+    font-weight: 500;
+
+
+}
+.logout ul li a .icon
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+.logout ul li:hover a .icon
+{
+    transform: translateY(-10px);
+    font-size: 2.5em;
+    transition: 0.5s;
+    
+}
+.logout ul li a .text
+{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(0px);
+
+}
+.logout ul li a:hover .text
+{
+    opacity: 1;
+    font-size: 1.2em;
+    transform: translateY(20px);
+
+}
+.icon{
+    color: blue;
+}
+
+/* https://ionic.io/ionicons */
+/* .indicator
+{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    border-radius:50%;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+
+}
+.indicator::before
+{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+
+} */
+/* nach dem tut muss noch der indicator eingefügt werden.. mal schauen wo */
+/* <div class="indicator"></div>  */

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#frontcard {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  background-color: lightblue;
+  border: 1px solid black;
+  opacity: 1;
+}
+
+#backcard {
+  position: relative;
+  top: 150px;
+  /* left: 30px; */
+  width: 300px;
+  height: 150px;
+  background-color: coral;
+  border: 1px solid black;
+  opacity: .0;
+    }
+#frontbtn{
+    opacity: .9;
+}
+#backbtn{
+    opacity: .6;
+}
+</style>
+</head>
+<body>
+
+
+
+<button id="backbtn" onclick="changeOpacity()">bacckard</button>
+<button id="frontbtn" onclick="changeBack()">frontcard</button>
+
+<div id="backcard">
+    <h1>backcard!</h1>
+  </div>
+
+<div id="frontcard">
+    <h1>frontcard</h1>
+</div>
+
+
+
+<script>
+function changeOpacity() {
+  document.getElementById("frontcard").style.opacity = "0.2";
+  document.getElementById("backcard").style.opacity = "0.9";
+
+  document.getElementById("frontbtn").style.opacity = "0.5";
+  document.getElementById("backbtn").style.opacity = "0.9";
+    
+}
+function changeBack() {
+  document.getElementById("frontcard").style.opacity = "0.9";
+  document.getElementById("backcard").style.opacity = "0.2";
+
+  document.getElementById("frontbtn").style.opacity = "0.9";
+  document.getElementById("backbtn").style.opacity = "0.5 ";
+    
+}
+</script>
+<!-- <script>
+    function changeOpacity(color){
+        document.body.style.background = color;
+
+        //for active
+        document.querySelectorAll('span').forEach(function(item){
+            item.classList.remove('active');
+        })
+        event.target.classList.add('active');
+    }
+</script> -->
+
+</body>
+</html>

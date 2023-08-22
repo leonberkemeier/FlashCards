@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abfrage</title>
+    <style>
+        #frontcard{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<style>
+    body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(112, 116, 135);
+            /* background: linear-gradient(to right, #333399, #ff00cc) */
+        }
+        
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40%;
+        flex-direction: column;
+        position: absolute;
+        background: var(--bgclr);
+        height: 50%;
+        width: 50%;
+        border-radius: 20px;
+        
+    }
+    .modal{
+        display: flex;
+        height:100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .modal-head{
+        
+        margin: 10px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: white;
+        background: var(--bgclr);
+        
+    }
+    .modal-body{
+        width: 98%;
+        height: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid black;
+        background: var(--bgclr);
+
+    }
+    .modal-footer{
+        width: 95%;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border-top: 1px solid black; */
+        background: var(--bgclr);
+    }
+    .quit-button{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: rgb(147, 14, 14);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transform-origin: top center;
+    text-align: center;
+    font-size: 40px;
+    right: 10px;
+    top: 10px;
+    outline: 1px ridge rgb(84, 83, 83);
+    cursor: pointer; 
+    opacity: 1;
+
+    }
+    
+#frontcard {
+     
+  position: absolute;
+  
+  
+  opacity: 1;
+}
+
+#backcard {
+     
+  position: absolute;
+  
+  
+  opacity: .0;
+    }
+.modal-picsize {
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    margin-left: 6%;
+}
+#frontbtn{
+    opacity: 1;
+    background: #3e3ebd ;
+    border-radius: 30px;
+    height: var(--btnh);
+    width: var(--btnw);
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    color: white;
+}
+#backbtn{
+    opacity: .3;
+    background: #ac018a;
+    border-radius: 30px;
+    height: var(--btnh);
+    width: var(--btnw);
+    color: white;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+}
+.buttonz{
+    background: rgb(126, 119, 119);
+    color: black;
+    height: var(--btnh);
+    width: var(--btnw);
+    border-radius: 30px;
+    cursor: pointer;
+    outline: 2px ridge rgb(0, 0, 0);
+    color: white;
+}
+    
+</style>
+<body style="--btnh:60px; --btnw:70px; --bgclr:rgb(50,50,50)">
+<div  class="center">
+    <div class="modal">
+<div class="modal-head">
+    {{questioncard.title}}
+    <!-- <div class="quit-button">
+        <a href="card">
+            <button type="button" class="btn btn-danger">
+                x
+            </button>
+        </a>
+    </div> -->
+</div>
+
+<div class="modal-body">
+    
+    
+
+<div id="frontcard">
+{% if questioncard.front %}
+<img src="{{questioncard.front.url}}" class="modal-picsize" alt="{{questioncard.title}}">
+{% endif %}
+</div>
+
+<div id="backcard">
+{% if questioncard.back %}
+<img src="{{questioncard.back.url}}" class="modal-picsize" alt="{{questioncard.title}}">
+{% endif %}
+</div>
+</div>
+
+<div class="modal-footer">
+ 
+<a  href="/myprojects/{{questioncard.side}}/quest?before={{questioncard.id}}">
+    <button class="buttonz">
+        << 
+    </button>
+</a>
+
+<button id="backbtn" onclick="changeOpacity()">backside</button>
+<button id="frontbtn" onclick="changeBack()">frontside</button>
+
+
+
+<a id="keydown" href="/myprojects/{{questioncard.side}}/quest?after={{questioncard.id}}">
+    <button id="keydown" class="buttonz">
+        >>
+    </button>
+</a>
+</div>
+</div>
+</div>
+<div>
+    <a href="/myprojects" > 
+        <button class="quit-button">
+            X
+        </button>    
+    </a>
+
+</div>
+
+<script>
+    document.addEventListener("keydown", e =>{
+            console.log(e);
+        });
+    
+
+    function changeOpacity() {
+      document.getElementById("frontcard").style.opacity = "0";
+      document.getElementById("backcard").style.opacity = "1";
+    
+      document.getElementById("frontbtn").style.opacity = "0.3";
+      document.getElementById("backbtn").style.opacity = "1";
+        
+    }
+    function changeBack() {
+      document.getElementById("frontcard").style.opacity = "1";
+      document.getElementById("backcard").style.opacity = "0";
+    
+      document.getElementById("frontbtn").style.opacity = "1";
+      document.getElementById("backbtn").style.opacity = "0.3 ";
+        
+    }
+    
+    </script>
+</body>
+<body>
+    <h1>questtheproject</h1>
+    {% for card in cards %} 
+    <h2>{{card.title}} </h2>
+    
+    {% endfor %}
+
+   
+</html>

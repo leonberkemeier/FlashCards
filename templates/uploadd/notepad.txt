@@ -1,0 +1,1 @@
+background: linear-gradient(to right, #212165, #7c0264) /* background: rgba(107, 184, 199, 1) !important; */;

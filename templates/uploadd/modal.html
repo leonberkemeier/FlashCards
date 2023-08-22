@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal</title>
+
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: grey;
+        }
+        h1{
+        position: relative;
+        top: 20px;
+        width: auto;
+        margin: 20px;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 200px;
+        flex-direction: column;
+        position: absolute;
+        background: orange;
+        height: 400px;
+        width: 400px;
+        border-radius: 20px;
+        
+    }
+    .modal{
+        display: flex;
+        height:100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .modal-head{
+        margin: 10px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #808080;
+        font-size: 30px;
+    }
+    .modal-body{
+        width: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid black;
+        background: yellow;
+
+    }
+    .modal-footer{
+        width: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid black;
+        background: green;
+    }
+    .btn{
+        margin-left: 20px;
+        margin-right: 20px;
+        ;
+    }
+
+        
+    </style>
+    
+    <header><h1>this will be the modal</h1></header>
+    <div class="center">
+        
+        <div class="modal">
+            <div class="modal-head">
+                title
+            </div>
+        <div class="modal-body">
+                img
+            </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-primary">forward</button>
+                <button type="button" class="btn btn-primary">backside</button>
+                <button type="button" class="btn btn-primary">backwards</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a href="cards" class="quitbutton">
+            <button>
+                x
+            </button>
+        </a>
+    </div>
+        
+</div>
+</body>
+</html>
+

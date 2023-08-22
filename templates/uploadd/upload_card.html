@@ -1,0 +1,73 @@
+{% extends 'uploadd/index.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>upload_cards</h2>
+<style>
+    .container { 
+        height: 200px;
+        position: absolute;
+         
+}
+    .center{
+        margin: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+}
+.subber{
+    height: 50px;
+    font-size: 18px;
+    color: black;
+    background: rgb(105, 225, 111);
+    border-radius: 20px;
+    float: right; 
+    border: 3px solid rgb(54, 43, 90);  
+    cursor: pointer;
+    
+}
+/* .submit-button{
+    pass
+} */
+.form-group{
+    padding:20px;
+    font-size: 28px;
+    border: 3px solid rgb(43, 90, 43);
+    border-radius: 20px;
+    background: rgb(192, 191, 191);
+}
+
+.return-button{
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+    border: 3px solid rgb(54, 43, 90);
+    background: rgb(229, 229, 139);
+    position: relative;
+    border-radius: 20px;
+    text-decoration: none;
+    
+}
+
+</style>
+
+
+<div class="container">
+    <div class="center">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="submit-button">
+            <button type="submit" class="subber">upload card</button>
+        </div>
+        </form>
+        <div class="return">
+            <button class="return-button" type="submit"><a href="/card">go back</a></button>
+        </div> 
+    </div>
+</div>
+
+{% endblock %}
